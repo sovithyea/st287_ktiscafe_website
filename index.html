@@ -1,162 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ember — Specialty Coffee</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember — Specialty Coffee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">Hello World</a>
-    <ul class="nav-links">
-      <li><a href="#about">Story</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#visit">Visit</a></li>
-    </ul>
-  </nav>
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">Hello World</a>
+        <ul class="nav-links">
+            <li><a href="#about">Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#visit">Visit</a></li>
+        </ul>
+    </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-eyebrow">Specialty Coffee &middot; Est. idk</p>
-    <h1 class="hero-title">Hello World</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-tagline">Coffee worth sitting down for.</p>
-    <div class="hero-cta">
-      <a href="#menu" class="btn">Explore the menu</a>
-    </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-tick"></div>
-    </div>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-eyebrow">Specialty Coffee &middot; Est. idk</p>
+        <h1 class="hero-title">Hello World</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-tagline">Coffee worth sitting down for.</p>
+        <div class="hero-cta">
+            <a href="#menu" class="btn">Explore the menu</a>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-tick"></div>
+        </div>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-text reveal">
-      <span class="label">Our story</span>
-      <h2 class="heading">Coffee is a craft,<br>not a <em>commodity.</em></h2>
-      <p>We opened Ember in 2019 with one idea: that a great cup of coffee is worth slowing down for. Every bean we use is sourced directly from small farms, roasted in small batches, and brewed with care.</p>
-      <p>Whether you're here for your morning ritual or a long afternoon, we want every visit to feel like the best part of your day.</p>
-      <a href="#menu" class="btn btn-dark">See what's brewing</a>
-    </div>
-    <div class="about-visual reveal">
-      <div class="cup-scene">
-        <div class="steam-group">
-          <div class="wisp"></div>
-          <div class="wisp"></div>
-          <div class="wisp"></div>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-text reveal">
+            <span class="label">Our story</span>
+            <h2 class="heading">Coffee is a craft,<br>not a <em>commodity.</em></h2>
+            <p>We opened Ember in 2019 with one idea: that a great cup of coffee is worth slowing down for. Every bean
+                we use is sourced directly from small farms, roasted in small batches, and brewed with care.</p>
+            <p>Whether you're here for your morning ritual or a long afternoon, we want every visit to feel like the
+                best part of your day.</p>
+            <a href="#menu" class="btn btn-dark">See what's brewing</a>
         </div>
-        <div class="cup-body">
-          <div class="cup-top"></div>
+        <div class="about-visual reveal">
+            <div class="cup-scene">
+                <div class="steam-group">
+                    <div class="wisp"></div>
+                    <div class="wisp"></div>
+                    <div class="wisp"></div>
+                </div>
+                <div class="cup-body">
+                    <div class="cup-top"></div>
+                </div>
+                <div class="cup-saucer"></div>
+            </div>
+            <p class="visual-quote">"The ritual is the point."</p>
         </div>
-        <div class="cup-saucer"></div>
-      </div>
-      <p class="visual-quote">"The ritual is the point."</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- MENU -->
-  <section class="menu-section" id="menu">
-    <div class="menu-inner">
-      <div class="menu-hd reveal">
-        <span class="label">What we brew</span>
-        <h2 class="heading">The Menu</h2>
-      </div>
-      <div class="menu-grid">
-        <div class="menu-card reveal">
-          <p class="card-tag">Espresso</p>
-          <h3>Single Origin</h3>
-          <p>Rotating Ethiopian or Colombian, sourced direct and dialled fresh each morning.</p>
-          <span class="card-price">$4.50</span>
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+        <div class="menu-inner">
+            <div class="menu-hd reveal">
+                <span class="label">What we brew</span>
+                <h2 class="heading">The Menu</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card reveal">
+                    <p class="card-tag">Espresso</p>
+                    <h3>Single Origin</h3>
+                    <p>Rotating Ethiopian or Colombian, sourced direct and dialled fresh each morning.</p>
+                    <span class="card-price">$4.50</span>
+                </div>
+                <div class="menu-card reveal">
+                    <p class="card-tag">Filter</p>
+                    <h3>Pour Over</h3>
+                    <p>V60 or Chemex — ask your barista what's on the bar today.</p>
+                    <span class="card-price">$5.50</span>
+                </div>
+                <div class="menu-card reveal">
+                    <p class="card-tag">Espresso</p>
+                    <h3>Cortado</h3>
+                    <p>Equal parts espresso and steamed milk. Small, balanced, perfect.</p>
+                    <span class="card-price">$4.75</span>
+                </div>
+                <div class="menu-card reveal">
+                    <p class="card-tag">Seasonal</p>
+                    <h3>Cardamom Latte</h3>
+                    <p>House-made cardamom syrup, whole milk, and a dusting of warm spice.</p>
+                    <span class="card-price">$5.75</span>
+                </div>
+                <div class="menu-card reveal">
+                    <p class="card-tag">Food</p>
+                    <h3>Avocado Toast</h3>
+                    <p>Sourdough, smashed avocado, chilli flakes, pickled radish.</p>
+                    <span class="card-price">$10.50</span>
+                </div>
+                <div class="menu-card reveal">
+                    <p class="card-tag">Food</p>
+                    <h3>Banana Bread</h3>
+                    <p>Baked in-house each morning. Served warm with cultured butter.</p>
+                    <span class="card-price">$6.00</span>
+                </div>
+            </div>
         </div>
-        <div class="menu-card reveal">
-          <p class="card-tag">Filter</p>
-          <h3>Pour Over</h3>
-          <p>V60 or Chemex — ask your barista what's on the bar today.</p>
-          <span class="card-price">$5.50</span>
-        </div>
-        <div class="menu-card reveal">
-          <p class="card-tag">Espresso</p>
-          <h3>Cortado</h3>
-          <p>Equal parts espresso and steamed milk. Small, balanced, perfect.</p>
-          <span class="card-price">$4.75</span>
-        </div>
-        <div class="menu-card reveal">
-          <p class="card-tag">Seasonal</p>
-          <h3>Cardamom Latte</h3>
-          <p>House-made cardamom syrup, whole milk, and a dusting of warm spice.</p>
-          <span class="card-price">$5.75</span>
-        </div>
-        <div class="menu-card reveal">
-          <p class="card-tag">Food</p>
-          <h3>Avocado Toast</h3>
-          <p>Sourdough, smashed avocado, chilli flakes, pickled radish.</p>
-          <span class="card-price">$10.50</span>
-        </div>
-        <div class="menu-card reveal">
-          <p class="card-tag">Food</p>
-          <h3>Banana Bread</h3>
-          <p>Baked in-house each morning. Served warm with cultured butter.</p>
-          <span class="card-price">$6.00</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VISIT -->
-  <section class="visit-section" id="visit">
-    <div class="reveal">
-      <span class="label">Hours</span>
-      <h2 class="heading">Come<br><em>find us.</em></h2>
-      <table class="hours-table" id="hours-table">
-        <tr data-day="1"><td>Monday</td>   <td>7:00 – 17:00</td></tr>
-        <tr data-day="2"><td>Tuesday</td>  <td>7:00 – 17:00</td></tr>
-        <tr data-day="3"><td>Wednesday</td><td>7:00 – 17:00</td></tr>
-        <tr data-day="4"><td>Thursday</td> <td>7:00 – 17:00</td></tr>
-        <tr data-day="5"><td>Friday</td>   <td>7:00 – 18:00</td></tr>
-        <tr data-day="6"><td>Saturday</td> <td>8:00 – 18:00</td></tr>
-        <tr data-day="0"><td>Sunday</td>   <td>8:00 – 16:00</td></tr>
-      </table>
-    </div>
-    <div class="reveal">
-      <span class="label">Location</span>
-      <h2 class="heading">We're easy<br>to <em>spot.</em></h2>
-      <div class="loc-items">
-        <div class="loc-item">
-          <span>Address</span>
-          <span>42 Market Lane<br>Fitzroy VIC 3065</span>
+    <!-- VISIT -->
+    <section class="visit-section" id="visit">
+        <div class="reveal">
+            <span class="label">Hours</span>
+            <h2 class="heading">Come<br><em>find us.</em></h2>
+            <table class="hours-table" id="hours-table">
+                <tr data-day="1">
+                    <td>Monday</td>
+                    <td>7:00 – 17:00</td>
+                </tr>
+                <tr data-day="2">
+                    <td>Tuesday</td>
+                    <td>7:00 – 17:00</td>
+                </tr>
+                <tr data-day="3">
+                    <td>Wednesday</td>
+                    <td>7:00 – 17:00</td>
+                </tr>
+                <tr data-day="4">
+                    <td>Thursday</td>
+                    <td>7:00 – 17:00</td>
+                </tr>
+                <tr data-day="5">
+                    <td>Friday</td>
+                    <td>7:00 – 18:00</td>
+                </tr>
+                <tr data-day="6">
+                    <td>Saturday</td>
+                    <td>8:00 – 18:00</td>
+                </tr>
+                <tr data-day="0">
+                    <td>Sunday</td>
+                    <td>8:00 – 16:00</td>
+                </tr>
+            </table>
         </div>
-        <div class="loc-item">
-          <span>Phone</span>
-          <span>(03) 9123 4567</span>
+        <div class="reveal">
+            <span class="label">Location</span>
+            <h2 class="heading">We're easy<br>to <em>spot.</em></h2>
+            <div class="loc-items">
+                <div class="loc-item">
+                    <span>Address</span>
+                    <span>42 Market Lane<br>Fitzroy VIC 3065</span>
+                </div>
+                <div class="loc-item">
+                    <span>Phone</span>
+                    <span>(03) 9123 4567</span>
+                </div>
+                <div class="loc-item">
+                    <span>Email</span>
+                    <span>hello@embercafe.com.au</span>
+                </div>
+                <div class="loc-item">
+                    <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-dark">Get directions
+                        →</a>
+                </div>
+            </div>
         </div>
-        <div class="loc-item">
-          <span>Email</span>
-          <span>hello@embercafe.com.au</span>
-        </div>
-        <div class="loc-item">
-          <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-dark">Get directions →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-logo">Hello World</span>
-    <p class="footer-copy">© 2026 Cafe</p>
-    <div class="footer-socials">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+        <span class="footer-logo">Hello World</span>
+        <p class="footer-copy">© 2026 Cafe</p>
+        <div class="footer-socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+    </footer>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
