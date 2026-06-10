@@ -5,12 +5,12 @@
 }
 
 :root {
-  --forest:   #1D2B1F;
-  --ivory:    #F4EFE4;
-  --amber:    #C9974A;
-  --sage:     #8B9E84;
-  --charcoal: #222222;
-  --muted:    #7A7A6E;
+  --forest: #204530;  /* Dark Pine */
+  --ivory: #DAD3C1;  /* Beige Sand */
+  --amber: #564838;  /* Earth Brown */
+  --sage: #6B7884;  /* Slate Blue Grey */
+  --charcoal: #3C3C3C;  /* Charcoal Grey */
+  --muted: #726860;  /* derived warm mid-tone */
 }
 
 html {
@@ -30,6 +30,8 @@ body {
   font-family: 'Noto Sans Khmer', sans-serif;
   font-style: normal;
   font-weight: 300;
+  font-size: 0.5em;
+  vertical-align: middle;
 }
 
 /* Nav */
@@ -53,16 +55,25 @@ nav.scrolled {
 }
 
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.5rem;
-  color: var(--ivory);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  transition: color 0.4s ease;
+  transition: opacity 0.25s ease;
 }
 
-nav.scrolled .nav-logo {
-  color: var(--forest);
+.nav-logo:hover {
+  opacity: 0.75;
+}
+
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter 0.4s ease;
+}
+
+nav.scrolled .nav-logo-img {
+  filter: none;
 }
 
 .nav-links {
@@ -92,7 +103,7 @@ nav.scrolled .nav-links a {
 .hero {
   height: 100vh;
   min-height: 600px;
-  background: var(--forest);
+  background: var(--sage);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +126,7 @@ nav.scrolled .nav-links a {
   font-family: 'Space Mono', monospace;
   font-size: 0.65rem;
   letter-spacing: 0.22em;
-  color: var(--amber);
+  color: var(--ivory);
   text-transform: uppercase;
   margin-bottom: 1.6rem;
   opacity: 0;
@@ -193,7 +204,7 @@ nav.scrolled .nav-links a {
   display: inline-block;
   padding: 0.85rem 2.2rem;
   border: 1px solid var(--amber);
-  color: var(--amber);
+  color: var(--ivory);
   text-decoration: none;
   font-size: 0.72rem;
   letter-spacing: 0.16em;
@@ -203,16 +214,16 @@ nav.scrolled .nav-links a {
 
 .btn:hover {
   background: var(--amber);
-  color: var(--forest);
+  color: var(--sage);
 }
 
 .btn-dark {
-  border-color: var(--forest);
-  color: var(--forest);
+  border-color: var(--sage);
+  color: var(--sage);
 }
 
 .btn-dark:hover {
-  background: var(--forest);
+  background: var(--sage);
   color: var(--ivory);
 }
 
@@ -232,7 +243,7 @@ nav.scrolled .nav-links a {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 400;
   line-height: 1.15;
-  color: var(--forest);
+  color: var(--sage);
   margin-bottom: 1.4rem;
 }
 
@@ -267,7 +278,7 @@ nav.scrolled .nav-links a {
 }
 
 .about-visual {
-  background: var(--forest);
+  background: var(--sage);
   height: 460px;
   display: flex;
   flex-direction: column;
@@ -355,7 +366,7 @@ nav.scrolled .nav-links a {
 
 /* Menu */
 .menu-section {
-  background: var(--forest);
+  background: var(--sage);
   padding: 9rem 3rem;
 }
 
@@ -403,7 +414,7 @@ nav.scrolled .nav-links a {
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--forest);
   margin-bottom: 0.7rem;
 }
 
@@ -495,6 +506,18 @@ nav.scrolled .nav-links a {
   line-height: 1.65;
 }
 
+.loc-email {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  line-height: 1.65;
+  transition: color 0.25s ease;
+}
+
+.loc-email:hover {
+  color: var(--amber);
+}
+
 .loc-item .btn-dark {
   margin-top: 1.8rem;
 }
@@ -509,10 +532,19 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.35rem;
-  color: var(--ivory);
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.7;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .footer-copy {
