@@ -367,7 +367,7 @@ nav.scrolled .nav-links a {
 
 /* MENU */
 .menu-section {
-    background: var(--sage);
+    background: var(--forest);
     padding: 9rem 3rem;
 }
 
@@ -453,7 +453,7 @@ nav.scrolled .nav-links a {
     font-size: 0.58rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(218, 211, 193, 0.55);
+    color: rgba(218, 211, 193, 0.7);
     margin-bottom: 0.7rem;
 }
 
@@ -635,7 +635,7 @@ footer {
 
 .footer-copy {
     font-size: 0.72rem;
-    color: rgba(218, 211, 193, 0.28);
+    color: rgba(218, 211, 193, 0.5);
     letter-spacing: 0.04em;
 }
 
