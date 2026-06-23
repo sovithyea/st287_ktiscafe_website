@@ -126,6 +126,11 @@ nav.scrolled .nav-links a {
     color: var(--amber) !important;
 }
 
+.nav-links a:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+}
+
 /* HERO — real photo background */
 .hero {
     height: 100dvh;
@@ -254,6 +259,11 @@ nav.scrolled .nav-links a {
 .btn:hover {
     background: var(--ivory);
     color: var(--amber);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
 }
 
 .btn-dark {
@@ -443,7 +453,7 @@ nav.scrolled .nav-links a {
     font-size: 0.58rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--forest);
+    color: rgba(218, 211, 193, 0.55);
     margin-bottom: 0.7rem;
 }
 
@@ -710,6 +720,11 @@ nav.scrolled .nav-hamburger span {
 
 .nav-hamburger.active span:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.nav-hamburger:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
 }
 
 /* =====================
