@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Specialty coffee on Street 287, Phnom Penh. Single origin espresso, pour overs, and seasonal drinks — brewed with care.">
+    <meta property="og:title" content="st287 ខ្ទិះកាហ្វេ — Specialty Coffee, Phnom Penh">
+    <meta property="og:description" content="Specialty coffee on Street 287, Phnom Penh. Single origin espresso, pour overs, and seasonal drinks — brewed with care.">
+    <meta property="og:image" content="assets/cafe.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="assets/cafe.jpg">
+    <meta name="theme-color" content="#2D4530">
+    <link rel="manifest" href="manifest.json">
     <title>st287 ខ្ទិះកាហ្វេ</title>
     <link rel="icon" href="assets/st_287_logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,29 +31,32 @@
         <a href="#" class="nav-logo">
             <img src="assets/st_287_logo.png" alt="st287 ខ្ទិះកាហ្វេ" class="nav-logo-img">
         </a>
+        <span class="nav-status" id="nav-status" aria-live="polite"></span>
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">Story</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#visit">Visit</a></li>
         </ul>
         <div class="nav-overlay" id="nav-overlay"></div>
-        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO — real photo -->
     <section class="hero">
-        <p class="hero-eyebrow">Specialty Coffee &middot; Street 287</p>
-        <h1 class="hero-title">st287 <span class="khmer">ខ្ទិះកាហ្វេ</span></h1>
+        <p class="hero-eyebrow">Specialty Coffee &middot; Street 287 &middot; Phnom Penh</p>
+        <h1 class="hero-title">st287 <span class="khmer" lang="km">ខ្ទិះកាហ្វេ</span></h1>
         <div class="hero-rule"></div>
         <p class="hero-tagline">Coffee worth sitting down for.</p>
         <div class="hero-cta">
             <a href="#menu" class="btn">Explore the menu</a>
         </div>
-
+        <div class="hero-scroll">
+            <div class="scroll-tick"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
@@ -56,13 +67,32 @@
             <h2 class="heading">Coffee is a craft,<br>not a <em>commodity.</em></h2>
             <p>We opened st287 with one idea: that a great cup of coffee is worth slowing down for. Every bean we use is
                 sourced directly from small farms, roasted in small batches, and brewed with care.</p>
-            <p>Whether you're here for your morning ritual or a long afternoon, we want every visit to feel like the
-                best part of your day.</p>
+            <p>Whether you're here for your morning ritual or a long afternoon under the mango tree, we want every visit
+                to feel like the best part of your day.</p>
             <a href="#menu" class="btn btn-dark">See what's brewing</a>
         </div>
         <div class="about-visual reveal">
-            <div class="cup-scene">
-                <img src="assets/cafe.jpg" alt="A cup of coffee" class="cup-img">
+            <img src="assets/cafe.jpg"
+                alt="The outdoor courtyard at st287 — a curved concrete bench beneath a mango tree">
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section" aria-label="Photos of the space">
+        <div class="gallery-strip">
+            <div class="gallery-cell">
+                <img src="assets/cafe.jpg" alt="The courtyard bench and mango tree" loading="lazy">
+                <span class="gallery-caption">The courtyard</span>
+            </div>
+            <div class="gallery-cell">
+                <img src="assets/cafe.jpg" alt="Handcrafted concrete seating" loading="lazy"
+                    style="object-position: right center;">
+                <span class="gallery-caption">Handcrafted seating</span>
+            </div>
+            <div class="gallery-cell">
+                <img src="assets/cafe.jpg" alt="Warm timber cladding" loading="lazy"
+                    style="object-position: 80% center;">
+                <span class="gallery-caption">Timber &amp; wood</span>
             </div>
         </div>
     </section>
@@ -74,38 +104,47 @@
                 <span class="label">What we brew</span>
                 <h2 class="heading">The Menu</h2>
             </div>
+
+            <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="Espresso">Espresso</button>
+                <button class="tab-btn" data-filter="Filter">Filter</button>
+                <button class="tab-btn" data-filter="Seasonal">Seasonal</button>
+                <button class="tab-btn" data-filter="Food">Food</button>
+            </div>
+
             <div class="menu-grid">
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Espresso">
                     <p class="card-tag">Espresso</p>
                     <h3>Single Origin</h3>
                     <p>Rotating Ethiopian or Colombian, sourced direct and dialled fresh each morning.</p>
                     <span class="card-price">$4.50</span>
                 </div>
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Filter">
                     <p class="card-tag">Filter</p>
                     <h3>Pour Over</h3>
                     <p>V60 or Chemex — ask your barista what's on the bar today.</p>
                     <span class="card-price">$5.50</span>
                 </div>
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Espresso">
                     <p class="card-tag">Espresso</p>
                     <h3>Cortado</h3>
                     <p>Equal parts espresso and steamed milk. Small, balanced, perfect.</p>
                     <span class="card-price">$4.75</span>
                 </div>
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Seasonal">
                     <p class="card-tag">Seasonal</p>
                     <h3>Cardamom Latte</h3>
                     <p>House-made cardamom syrup, whole milk, and a dusting of warm spice.</p>
                     <span class="card-price">$5.75</span>
                 </div>
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Food">
                     <p class="card-tag">Food</p>
                     <h3>Avocado Toast</h3>
                     <p>Sourdough, smashed avocado, chilli flakes, pickled radish.</p>
                     <span class="card-price">$10.50</span>
                 </div>
-                <div class="menu-card reveal">
+                <div class="menu-card reveal" data-category="Food">
                     <p class="card-tag">Food</p>
                     <h3>Banana Bread</h3>
                     <p>Baked in-house each morning. Served warm with cultured butter.</p>
@@ -121,31 +160,31 @@
             <span class="label">Hours</span>
             <h2 class="heading">Come<br><em>find us.</em></h2>
             <table class="hours-table" id="hours-table">
-                <tr data-day="1">
+                <tr data-day="1" data-open="7" data-close="17">
                     <td>Monday</td>
                     <td>7:00 – 17:00</td>
                 </tr>
-                <tr data-day="2">
+                <tr data-day="2" data-open="7" data-close="17">
                     <td>Tuesday</td>
                     <td>7:00 – 17:00</td>
                 </tr>
-                <tr data-day="3">
+                <tr data-day="3" data-open="7" data-close="17">
                     <td>Wednesday</td>
                     <td>7:00 – 17:00</td>
                 </tr>
-                <tr data-day="4">
+                <tr data-day="4" data-open="7" data-close="17">
                     <td>Thursday</td>
                     <td>7:00 – 17:00</td>
                 </tr>
-                <tr data-day="5">
+                <tr data-day="5" data-open="7" data-close="18">
                     <td>Friday</td>
                     <td>7:00 – 18:00</td>
                 </tr>
-                <tr data-day="6">
+                <tr data-day="6" data-open="8" data-close="18">
                     <td>Saturday</td>
                     <td>8:00 – 18:00</td>
                 </tr>
-                <tr data-day="0">
+                <tr data-day="0" data-open="8" data-close="16">
                     <td>Sunday</td>
                     <td>8:00 – 16:00</td>
                 </tr>
@@ -161,7 +200,12 @@
                 </div>
                 <div class="loc-item">
                     <span>Phone</span>
-                    <span>+855 12 345 678</span>
+                    <span><a href="tel:+85512345678" style="color:inherit;text-decoration:none;">+855 12 345
+                            678</a></span>
+                </div>
+                <div class="loc-item">
+                    <span>Telegram</span>
+                    <a href="https://t.me/st287ktiscafe" target="_blank" rel="noopener" class="loc-email">Message us on Telegram →</a>
                 </div>
                 <div class="loc-item">
                     <span>Email</span>
@@ -176,9 +220,17 @@
         <div class="map-wrap reveal">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.884059362781!2d104.90094411599397!3d11.57238235255255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095100490ddacf%3A0x1a8e93db7edb8ad0!2sSt.287%20Ktis%20Caf%C3%A9!5e1!3m2!1sen!2sau!4v1781179668813!5m2!1sen!2sau"
-                width="1200" height="800" style="border:0;" allowfullscreen="" loading="lazy"
+                title="Map to st287 Ktis Café" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+    </section>
+
+    <!-- INSTAGRAM CTA -->
+    <section class="ig-section">
+        <span class="label" style="display:block;margin-bottom:0.5rem;">Follow along</span>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="ig-handle">
+            @st287ktiscafe
+        </a>
     </section>
 
     <!-- FOOTER -->
@@ -186,13 +238,18 @@
         <a href="#" class="footer-logo">
             <img src="assets/st_287_logo.png" alt="st287 ខ្ទិះកាហ្វេ" class="footer-logo-img">
         </a>
-        <p class="footer-copy">© 2026 st287 ខ្ទិះកាហ្វេ</p>
+        <p class="footer-copy">© 2026 st287 ខ្ទិះកាហ្វេ · Phnom Penh</p>
         <div class="footer-socials">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+            <a href="https://t.me/st287ktiscafe" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://tiktok.com/@st287ktiscafe" target="_blank" rel="noopener">TikTok</a>
         </div>
     </footer>
 
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" focusable="false">
+            <path d="M7 12V2M7 2L2.5 6.5M7 2L11.5 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
     <script src="js/script.js"></script>
 </body>
 

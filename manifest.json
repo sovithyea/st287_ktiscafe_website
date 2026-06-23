@@ -1,0 +1,21 @@
+{
+  "name": "st287 ខ្ទិះកាហ្វេ",
+  "short_name": "st287",
+  "description": "Specialty coffee on Street 287, Phnom Penh.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EAE5D8",
+  "theme_color": "#2D4530",
+  "icons": [
+    {
+      "src": "assets/st_287_logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/st_287_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
