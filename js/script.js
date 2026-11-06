@@ -62,28 +62,54 @@ const currentHour = phnomPenhDate.getHours();
 const todayRow = document.querySelector(`#hours-table tr[data-day="${todayIdx}"]`);
 if (todayRow) todayRow.classList.add('is-today');
 
-// Open / Closed badge
+// Open / Closed badge + today's hours in the info strip
 const statusEl = document.getElementById('nav-status');
-if (statusEl && todayRow) {
+const infoToday = document.getElementById('info-today');
+
+if (todayRow) {
   const openHour = parseInt(todayRow.dataset.open, 10);
   const closeHour = parseInt(todayRow.dataset.close, 10);
   const isOpen = currentHour >= openHour && currentHour < closeHour;
-  statusEl.textContent = isOpen ? 'Open now' : 'Closed';
-  statusEl.classList.add(isOpen ? 'is-open' : 'is-closed');
+  const hours = todayRow.cells[1].textContent.trim();
+  const dayName = todayRow.cells[0].textContent.trim();
+
+  if (statusEl) {
+    statusEl.textContent = isOpen ? 'Open now' : 'Closed';
+    statusEl.classList.add(isOpen ? 'is-open' : 'is-closed');
+  }
+
+  if (infoToday) {
+    infoToday.textContent = isOpen
+      ? `Open now \u00b7 until ${closeHour}:00`
+      : `Closed \u00b7 ${dayName} ${hours}`;
+    if (!isOpen) infoToday.classList.add('info-today-closed');
+  }
 }
 
 // Menu category tabs
 const tabs = document.querySelectorAll('.tab-btn');
 const cards = document.querySelectorAll('.menu-card');
+const menuEmpty = document.getElementById('menu-empty');
 
 tabs.forEach(tab => {
+  tab.setAttribute('aria-pressed', tab.classList.contains('active') ? 'true' : 'false');
+
   tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const filter = tab.dataset.filter;
-    cards.forEach(card => {
-      card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-pressed', 'false');
     });
+    tab.classList.add('active');
+    tab.setAttribute('aria-pressed', 'true');
+
+    const filter = tab.dataset.filter;
+    let shown = 0;
+    cards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('is-hidden', !match);
+      if (match) shown++;
+    });
+    if (menuEmpty) menuEmpty.hidden = shown > 0;
   });
 });
 

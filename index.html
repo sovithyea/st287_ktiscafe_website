@@ -66,12 +66,30 @@
         <div class="hero-rule"></div>
         <p class="hero-tagline">Coffee worth sitting down for.</p>
         <div class="hero-cta">
+            <a href="https://maps.app.goo.gl/JoHbrSNJWUWsnpwT9" target="_blank" rel="noopener"
+                class="btn btn-solid">Get directions</a>
             <a href="#menu" class="btn">Explore the menu</a>
         </div>
         <div class="hero-scroll">
             <div class="scroll-tick"></div>
             <span>Scroll</span>
         </div>
+    </section>
+
+    <!-- INFO STRIP — hours, location, Telegram -->
+    <section class="info-strip" aria-label="Visit information">
+        <div class="info-cell">
+            <span class="info-label">Today</span>
+            <span class="info-value" id="info-today">St. 287 &middot; Toul Kork</span>
+        </div>
+        <a class="info-cell" href="https://maps.app.goo.gl/JoHbrSNJWUWsnpwT9" target="_blank" rel="noopener">
+            <span class="info-label">Find us</span>
+            <span class="info-value">St. 287, Boeung Kak II, Toul Kork <span class="info-arrow">&rarr;</span></span>
+        </a>
+        <a class="info-cell info-cell-action" href="https://t.me/st287ktiscafe" target="_blank" rel="noopener">
+            <span class="info-label">Order &amp; enquiries</span>
+            <span class="info-value">Message us on Telegram <span class="info-arrow">&rarr;</span></span>
+        </a>
     </section>
 
     <!-- ABOUT -->
@@ -91,25 +109,6 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-section" aria-label="Photos of the space">
-        <div class="gallery-strip">
-            <div class="gallery-cell">
-                <img src="assets/cafe.jpg" alt="The courtyard bench and mango tree" loading="lazy">
-                <span class="gallery-caption">The courtyard</span>
-            </div>
-            <div class="gallery-cell">
-                <img src="assets/cafe.jpg" alt="Handcrafted concrete seating" loading="lazy"
-                    style="object-position: right center;">
-                <span class="gallery-caption">Handcrafted seating</span>
-            </div>
-            <div class="gallery-cell">
-                <img src="assets/cafe.jpg" alt="Warm timber cladding" loading="lazy"
-                    style="object-position: 80% center;">
-                <span class="gallery-caption">Timber &amp; wood</span>
-            </div>
-        </div>
-    </section>
 
     <!-- MENU -->
     <section class="menu-section" id="menu">
@@ -119,7 +118,7 @@
                 <h2 class="heading">The Menu</h2>
             </div>
 
-            <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+            <div class="menu-tabs" role="group" aria-label="Filter menu by category">
                 <button class="tab-btn active" data-filter="all">All</button>
                 <button class="tab-btn" data-filter="Espresso">Espresso</button>
                 <button class="tab-btn" data-filter="Filter">Filter</button>
@@ -127,7 +126,7 @@
                 <button class="tab-btn" data-filter="Food">Food</button>
             </div>
 
-            <div class="menu-grid">
+            <div class="menu-grid" id="menu-grid">
                 <div class="menu-card reveal" data-category="Espresso">
                     <p class="card-tag">Espresso</p>
                     <h3>Single Origin</h3>
@@ -165,6 +164,7 @@
                     <span class="card-price">$6.00</span>
                 </div>
             </div>
+            <p class="menu-empty" id="menu-empty" hidden>Nothing on the bar in this category right now.</p>
         </div>
     </section>
 

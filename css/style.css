@@ -244,6 +244,13 @@ nav.scrolled .nav-links a {
 }
 
 /* BUTTONS */
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+}
+
 .btn {
     display: inline-block;
     padding: 0.85rem 2.2rem;
@@ -266,6 +273,17 @@ nav.scrolled .nav-links a {
     outline-offset: 3px;
 }
 
+.btn-solid {
+    background: var(--ivory);
+    color: var(--forest);
+    border-color: var(--ivory);
+}
+
+.btn-solid:hover {
+    background: transparent;
+    color: var(--ivory);
+}
+
 .btn-dark {
     border-color: var(--sage);
     color: var(--sage);
@@ -274,6 +292,72 @@ nav.scrolled .nav-links a {
 .btn-dark:hover {
     background: var(--sage);
     color: var(--ivory);
+}
+
+/* INFO STRIP — the three things a visitor actually needs */
+.info-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--charcoal);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.6rem 2rem;
+    text-decoration: none;
+    border-right: 1px solid rgba(218, 211, 193, 0.14);
+    transition: background 0.25s ease;
+}
+
+.info-cell:last-child {
+    border-right: none;
+}
+
+a.info-cell:hover {
+    background: rgba(218, 211, 193, 0.07);
+}
+
+a.info-cell:focus-visible {
+    outline: 2px solid var(--ivory);
+    outline-offset: -4px;
+}
+
+.info-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(218, 211, 193, 0.65);
+}
+
+.info-value {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ivory);
+}
+
+.info-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+a.info-cell:hover .info-arrow {
+    transform: translateX(4px);
+}
+
+.info-cell-action {
+    background: var(--forest);
+}
+
+.info-cell-action:hover {
+    background: #365239;
+}
+
+.info-today-closed {
+    color: rgba(218, 211, 193, 0.7);
 }
 
 /* ABOUT */
@@ -319,50 +403,6 @@ nav.scrolled .nav-links a {
 
 .about-visual:hover img {
     transform: scale(1.03);
-}
-
-/* GALLERY */
-.gallery-section {
-    padding: 0;
-    background: var(--charcoal);
-    overflow: hidden;
-}
-
-.gallery-strip {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    height: 380px;
-}
-
-.gallery-cell {
-    overflow: hidden;
-    position: relative;
-}
-
-.gallery-cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: brightness(0.88);
-}
-
-.gallery-cell:hover img {
-    transform: scale(1.05);
-    filter: brightness(1);
-}
-
-.gallery-caption {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 1.2rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(218, 211, 193, 0.5);
-    pointer-events: none;
 }
 
 /* MENU */
@@ -426,26 +466,35 @@ nav.scrolled .nav-links a {
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* 1px gaps over a tinted backdrop draw the grid lines, so hiding a card
+       during filtering can never orphan a border. */
+    gap: 1px;
+    background: rgba(218, 211, 193, 0.1);
     border: 1px solid rgba(218, 211, 193, 0.1);
 }
 
 .menu-card {
     padding: 2.2rem 1.8rem;
-    border-right: 1px solid rgba(218, 211, 193, 0.1);
-    border-bottom: 1px solid rgba(218, 211, 193, 0.1);
+    background: var(--forest);
     transition: background 0.25s ease;
 }
 
-.menu-card:nth-child(3n) {
-    border-right: none;
-}
-
-.menu-card:nth-last-child(-n+3) {
-    border-bottom: none;
+.menu-card.is-hidden {
+    display: none;
 }
 
 .menu-card:hover {
-    background: rgba(218, 211, 193, 0.06);
+    background: #365239;
+}
+
+.menu-empty {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(218, 211, 193, 0.55);
 }
 
 .card-tag {
@@ -733,6 +782,19 @@ nav.scrolled .nav-hamburger span {
 
 /* Tablet */
 @media (max-width: 1024px) {
+    .info-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-cell:nth-child(2) {
+        border-right: none;
+    }
+
+    .info-cell-action {
+        grid-column: 1 / -1;
+        border-top: 1px solid rgba(218, 211, 193, 0.14);
+    }
+
     .about {
         grid-template-columns: 1fr;
         padding: 7rem 3rem;
@@ -747,33 +809,8 @@ nav.scrolled .nav-hamburger span {
         height: 380px;
     }
 
-    .gallery-strip {
-        grid-template-columns: 1fr 1fr;
-        height: 280px;
-    }
-
-    .gallery-cell:last-child {
-        display: none;
-    }
-
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .menu-card:nth-child(3n) {
-        border-right: 1px solid rgba(218, 211, 193, 0.1);
-    }
-
-    .menu-card:nth-child(2n) {
-        border-right: none;
-    }
-
-    .menu-card:nth-last-child(-n+3) {
-        border-bottom: 1px solid rgba(218, 211, 193, 0.1);
-    }
-
-    .menu-card:nth-last-child(-n+2) {
-        border-bottom: none;
     }
 }
 
@@ -847,6 +884,20 @@ nav.scrolled .nav-hamburger span {
         font-size: clamp(4rem, 18vw, 7rem);
     }
 
+    .info-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .info-cell {
+        padding: 1.25rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(218, 211, 193, 0.14);
+    }
+
+    .info-cell:last-child {
+        border-bottom: none;
+    }
+
     /* About mobile */
     .about {
         grid-template-columns: 1fr;
@@ -862,16 +913,6 @@ nav.scrolled .nav-hamburger span {
         height: 260px;
     }
 
-    /* Gallery mobile: single image */
-    .gallery-strip {
-        grid-template-columns: 1fr;
-        height: 260px;
-    }
-
-    .gallery-cell:not(:first-child) {
-        display: none;
-    }
-
     /* Menu mobile */
     .menu-section {
         padding: 5rem 1.25rem;
@@ -883,15 +924,6 @@ nav.scrolled .nav-hamburger span {
 
     .menu-grid {
         grid-template-columns: 1fr;
-    }
-
-    .menu-card {
-        border-right: none !important;
-        border-bottom: 1px solid rgba(218, 211, 193, 0.1) !important;
-    }
-
-    .menu-card:last-child {
-        border-bottom: none !important;
     }
 
     /* Visit mobile */
@@ -1017,6 +1049,10 @@ nav.scrolled .nav-status.is-closed {
     }
 
     .nav-status {
-        display: none;
+        font-size: 0.52rem;
+        letter-spacing: 0.1em;
+        padding: 0.28rem 0.5rem;
+        margin-left: auto;
+        margin-right: 0.75rem;
     }
 }
